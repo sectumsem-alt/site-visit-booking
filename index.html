@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book an Energy Valve site visit · Rite Products, Incorporated</title>
+<link rel="stylesheet" href="industry.css">
+<link rel="stylesheet" href="booking.css">
+</head>
+<body>
+<div class="page">
+  <header class="nav site-header">
+    <div class="nav-brand brand">
+      <span class="logo-slot" data-label="Rite logo"><img src="logos/rite.png" alt="Rite Products, Incorporated"></span>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="logo-slot" data-label="Belimo logo"><img src="logos/belimo.png" alt="Belimo"></span>
+    </div>
+    <span class="header-tag" data-event="eventName">FMOP 2026</span>
+  </header>
+
+  <main class="main">
+    <div class="intro">
+      <p class="kicker">+&nbsp;&nbsp;<span data-event="eventName">FMOP 2026</span></p>
+      <h1 class="intro-title">Thank you for visiting us at <span data-event="eventShortName">FMOP</span></h1>
+      <p class="intro-body">It was great meeting you at our booth. Book a site visit below for a guided walkthrough of our Belimo Energy Valve mock-ups, followed by a technical presentation with our principal, Belimo. Pick a preferred date and we&rsquo;ll confirm your slot and host by email.</p>
+    </div>
+
+    <div id="confirmation" class="card blueprint panel confirmation" hidden>
+      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <p class="kicker">Request received</p>
+      <h2 class="confirm-title">Thank you, <span data-out="firstName"></span>.</h2>
+      <p class="confirm-body">We&rsquo;ll confirm your visit for <span data-out="dateLabel"></span> (<span data-out="slot"></span>) at <span data-out="email"></span> within one business day. Your visit includes the mock-up walkthrough and a Belimo Energy Valve presentation with our principal.</p>
+      <div class="actions"><button type="button" id="reset" class="btn btn-secondary">Book another visit</button></div>
+    </div>
+
+    <form id="booking" class="form" novalidate>
+      <section class="card blueprint panel">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h2 class="section-title"><span>01</span>Your details</h2>
+        <div class="grid">
+          <div class="field"><label for="name">Full name *</label><input id="name" name="name" class="input" required autocomplete="name"></div>
+          <div class="field"><label for="company">Company *</label><input id="company" name="company" class="input" required autocomplete="organization"></div>
+          <div class="field"><label for="position">Position</label><input id="position" name="position" class="input" autocomplete="organization-title"></div>
+          <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" class="input" required autocomplete="email"></div>
+          <div class="field"><label for="mobile">Mobile *</label><input id="mobile" name="mobile" type="tel" class="input" required placeholder="+63" autocomplete="tel"></div>
+          <div class="field"><label for="guests">Number of attendees</label><input id="guests" name="guests" type="number" min="1" max="10" value="1" class="input"></div>
+        </div>
+      </section>
+
+      <section class="card blueprint panel">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h2 class="section-title"><span>02</span>Your building</h2>
+        <div class="grid">
+          <div class="field"><label for="building">Building / project name</label><input id="building" name="building" class="input"></div>
+          <div class="field"><label for="type">Building type</label>
+            <select id="type" name="type" class="input">
+              <option value="">Select…</option><option>Office</option><option>Hospital</option><option>Mall / retail</option><option>Hotel</option><option>Data center</option><option>Industrial</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label id="interest-label">Interest</label>
+          <div class="radio-row" role="radiogroup" aria-labelledby="interest-label">
+            <label class="radio"><input type="radio" name="interest" value="New installation" checked><span class="dot"></span>New installation</label>
+            <label class="radio"><input type="radio" name="interest" value="Retrofit"><span class="dot"></span>Retrofit</label>
+            <label class="radio"><input type="radio" name="interest" value="Just exploring"><span class="dot"></span>Just exploring</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="card blueprint panel">
+        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <h2 class="section-title"><span>03</span>Preferred schedule</h2>
+        <div class="grid grid-end">
+          <div class="field"><label for="date">Preferred date * (weekdays)</label><input id="date" name="date" type="date" class="input" required></div>
+          <div class="field"><label id="slot-label">Time slot</label>
+            <div class="seg" role="radiogroup" aria-labelledby="slot-label">
+              <label class="seg-opt"><input type="radio" name="slot" value="9:00 AM" checked>9:00 AM</label>
+              <label class="seg-opt"><input type="radio" name="slot" value="11:00 AM">11:00 AM</label>
+              <label class="seg-opt"><input type="radio" name="slot" value="2:00 PM">2:00 PM</label>
+            </div>
+          </div>
+        </div>
+        <div class="grid agenda">
+          <div class="agenda-item"><span class="agenda-letter">B</span><div class="agenda-text"><strong>Belimo presentation &middot; 45 min</strong><span>Energy Valve technology, sizing and case results, with Q&amp;A, led by our principal.</span></div></div>
+        </div>
+        <div class="field"><label for="topics">Topics for the Belimo presentation</label><input id="topics" name="topics" class="input" placeholder="e.g. low &Delta;T syndrome, BMS integration, M&amp;V reporting"></div>
+        <p id="weekend-warn" class="warn" hidden>Visits run on weekdays only — please pick Monday to Friday.</p>
+        <div class="field"><label for="notes">Notes (AHU/FCU count, questions, access requirements)</label><textarea id="notes" name="notes" class="input"></textarea></div>
+      </section>
+
+      <div class="submit-row">
+        <button type="submit" id="submit" class="btn btn-primary blueprint submit-btn"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><span>Request site visit</span></button>
+        <span class="fine-print">* Required. We&rsquo;ll only use your details to arrange this visit.</span>
+      </div>
+      <p id="error" class="warn" role="alert" hidden></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">Rite Products, Incorporated &middot; [Street Address], [City], Philippines</footer>
+</div>
+<script src="config.js"></script>
+<script src="booking.js"></script>
+</body>
+</html>
