@@ -18,6 +18,11 @@ a:hover { color: var(--color-accent-900); }
   color: var(--color-accent-200);
 }
 .logo-slot img { width: 100%; height: 100%; object-fit: contain; }
+/* Dark logos need a light chip to read on the navy header. */
+.logo-slot:not(.empty) {
+  box-sizing: border-box; padding: 6px 10px;
+  background: #fff; border-radius: var(--radius-sm);
+}
 .logo-slot.empty img { display: none; }
 .logo-slot.empty {
   display: grid; place-items: center;
